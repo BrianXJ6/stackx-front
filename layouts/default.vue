@@ -9,25 +9,12 @@
           <b-navbar-toggle target="nav-collapse" />
           <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav class="ml-auto">
-              <b-nav-item to="/pedidos/novo">
-                Novo pedido
+              <b-nav-item to="/">
+                Início
               </b-nav-item>
-              <b-nav-item-dropdown text="Tipos de produto" right>
-                <b-dropdown-item to="/tipos/listagem">
-                  Listar
-                </b-dropdown-item>
-                <b-dropdown-item to="/tipos/novo">
-                  Criar
-                </b-dropdown-item>
-              </b-nav-item-dropdown>
-              <b-nav-item-dropdown text="Produtos" right>
-                <b-dropdown-item to="/produtos/listagem">
-                  Listar
-                </b-dropdown-item>
-                <b-dropdown-item to="/produtos/novo">
-                  Criar
-                </b-dropdown-item>
-              </b-nav-item-dropdown>
+              <b-nav-item to="/usuarios/novo">
+                Novo usuário
+              </b-nav-item>
             </b-navbar-nav>
           </b-collapse>
         </div>
