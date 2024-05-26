@@ -8,10 +8,14 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    htmlAttrs: {
+      class: 'h-100',
+    },
+    bodyAttrs: {
+      class: 'h-100',
+    },
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -42,13 +46,26 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    proxy: true,
+    headers: {
+      Accept: 'application/json',
+      'Content-type': 'application/json',
+    },
+  },
+
+  proxy: {
+    // Simple proxy
+    '/api': {
+      target:
+        'https://nhwrbaltpda5r252wouci36jyu0zhghu.lambda-url.us-east-1.on.aws',
+      pathRewrite: { '^/api': '' },
+    },
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en',
+      lang: 'pt-BR',
     },
   },
 
